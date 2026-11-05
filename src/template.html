@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Big One</title>
+<style>
+  :root { --ink: #22203a; --paper: #fff8ec; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; font-family: Georgia, "Times New Roman", serif; }
+  #stage { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; }
+  #frame { position: relative; aspect-ratio: 1920 / 1038; width: min(100vw, calc(100vh * 1920 / 1038)); }
+  #film, #titles { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #titles { pointer-events: none; }
+  #ui { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;
+        background: radial-gradient(ellipse at center, rgba(10,20,60,0.25), rgba(5,10,30,0.6)); transition: opacity .4s; }
+  #ui.hidden { opacity: 0; pointer-events: none; }
+  #ui h1 { margin: 0; color: var(--paper); font-family: "Arial Black", Impact, sans-serif; font-size: clamp(40px, 7.5vw, 120px); letter-spacing: .04em; line-height: 1; text-shadow: 0 4px 0 var(--ink), 0 0 30px rgba(0,0,0,.4); }
+  #ui p { margin: 0; color: #e8f1ff; font-size: clamp(13px, 1.3vw, 18px); letter-spacing: .3em; }
+  #play { font: inherit; font-size: clamp(16px, 1.6vw, 22px); padding: .6em 1.6em; border-radius: 999px; border: 3px solid var(--ink);
+          background: var(--paper); color: var(--ink); cursor: pointer; box-shadow: 0 5px 0 var(--ink); }
+  #play:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--ink); }
+  #play:disabled { opacity: .6; }
+  #msg { min-height: 1.2em; }
+  #bar { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; cursor: pointer; opacity: 0; transition: opacity .3s; }
+  #frame:hover #bar { opacity: 1; }
+  #bar::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(255,255,255,.25); }
+  #fill { position: absolute; left: 0; bottom: 0; height: 4px; background: #ffd34d; width: 0; }
+  #help { position: fixed; right: 12px; bottom: 8px; color: rgba(255,255,255,.35); font: 11px system-ui, sans-serif; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="frame">
+  <canvas id="film"></canvas>
+  <canvas id="titles"></canvas>
+  <div id="ui">
+    <p>THE</p>
+    <h1>BIG ONE</h1>
+    <p>a fishing story · 39 s</p>
+    <button id="play">▶ PLAY</button>
+    <p id="msg"></p>
+  </div>
+  <div id="bar"><div id="fill"></div></div>
+</div></div>
+<div id="help">space play/pause · ← → seek · R restart · F fullscreen</div>
+<script>/*BUNDLE*/</script>
+</body>
+</html>

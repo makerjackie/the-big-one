@@ -1,0 +1,25 @@
+{
+  "name": "the-big-one",
+  "version": "1.0.0",
+  "description": "A 39-second anime short made 100% in code by Claude Opus 5.5: three.js rendering, synthesized score, one offline HTML file.",
+  "author": "MakerJackie",
+  "license": "MIT",
+  "type": "module",
+  "repository": "github:makerjackie/the-big-one",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "build:min": "node tools/build.mjs --min",
+    "serve": "node tools/serve.mjs 5178",
+    "snap": "node tools/snap.mjs",
+    "audio": "node tools/render-audio.mjs",
+    "render": "node tools/render.mjs",
+    "covers": "node tools/covers.mjs",
+    "pops": "node tools/pops.mjs",
+    "perf": "node tools/perf.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.24.2",
+    "puppeteer-core": "^23.11.1",
+    "three": "^0.170.0"
+  }
+}
