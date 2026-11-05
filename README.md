@@ -13,11 +13,11 @@
 ## Watch / 观看
 
 - **Play it**: download [`the_big_one.html`](the_big_one.html) and open it in Chrome / Edge / Safari, then press ▶ PLAY. Space pauses, ← → seek, F fullscreen, `?scale=2` supersamples.
-- **Video**: 1080p MP4 in the [Releases](https://github.com/makerjackie/the-big-one/releases).
+- **Video**: 1920×1040 MP4 in the [Releases](https://github.com/makerjackie/the-big-one/releases).
 
 ## Numbers / 数据
 
-- 13 shots, 936 frames at 24 fps, 1080p
+- 13 shots, 936 frames at 24 fps, 1920×1040
 - ~5,800 lines of code in 26 source files
 - 3 agents: a director agent (rendering, modeling, animation) plus two in parallel (score & sound, props)
 - First cut (with music) in about half an hour; three rounds of notes after that, a little over 2 hours of agent work in total
